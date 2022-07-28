@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>3D Reconstructing TV Shows</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h1 class="col-md-12 text-center">
+                The One Where They Reconstructed<br>3D Humans and Environments in TV Shows
+                <br>
+                <small>
+                ECCV 2022
+                </small>
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://geopavlakos.github.io/">
+                          Georgios Pavlakos*
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ethanweber.me/">
+                          Ethan Weber*
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.matthewtancik.com/">
+                          Matthew Tancik
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://people.eecs.berkeley.edu/~kanazawa/">
+                          Angjoo Kanazawa
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        UC Berkeley
+                    </li>
+                    <li>
+                        * denotes equal contribution
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li class="nav-item text-center">
+                        <a href="" class="nav-link" title="Temp link">
+                            <svg style="width:48px;height:48px" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z" />
+                            </svg><br> Paper
+                        </a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a href="https://github.com/ethanweber/sitcoms3D" class="nav-link">
+                            <svg style="width:48px;height:48px" viewBox="0 0 65 65">
+                                <path fill="currentColor" d="M32 0a32.021 32.021 0 0 0-10.1 62.4c1.6.3 2.2-.7 2.2-1.5v-6c-8.9 1.9-10.8-3.8-10.8-3.8-1.5-3.7-3.6-4.7-3.6-4.7-2.9-2 .2-1.9.2-1.9 3.2.2 4.9 3.3 4.9 3.3 2.9 4.9 7.5 3.5 9.3 2.7a6.93 6.93 0 0 1 2-4.3c-7.1-.8-14.6-3.6-14.6-15.8a12.27 12.27 0 0 1 3.3-8.6 11.965 11.965 0 0 1 .3-8.5s2.7-.9 8.8 3.3a30.873 30.873 0 0 1 8-1.1 30.292 30.292 0 0 1 8 1.1c6.1-4.1 8.8-3.3 8.8-3.3a11.965 11.965 0 0 1 .3 8.5 12.1 12.1 0 0 1 3.3 8.6c0 12.3-7.5 15-14.6 15.8a7.746 7.746 0 0 1 2.2 5.9v8.8c0 .9.6 1.8 2.2 1.5A32.021 32.021 0 0 0 32 0z" />
+                            </svg>
+                            <br> Code and data
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+                <video width="100%" autoplay loop muted controls>
+                  <source src="media/twitter/TBBT-big_living_room_TBBT_S12E06_00009022-TBBT_S12E06_00009023.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <video width="100%" autoplay loop muted controls>
+                  <source src="media/twitter/HIMYM-red_apartment_HIMYM_S06E06_00020902-HIMYM_S06E06_00020903.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <video width="100%" autoplay loop muted controls>
+                  <source src="media/twitter/TAAHM-kitchen_TAAHM_S10E03_00012120-TAAHM_S10E03_00012121.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <video width="100%" autoplay loop muted controls>
+                  <source src="media/twitter/ELR-apartment_ELR_S09E03_00028142-ELR_S09E03_00028143.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <video width="100%" autoplay loop muted controls>
+                  <source src="media/twitter/Seinfeld-jerry_living_room_Seinfeld_S09E07_00005801-Seinfeld_S09E07_00005802.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <video width="100%" autoplay loop muted controls>
+                  <source src="media/twitter/Frasier-apartment_Frasier_S11E02_00017375-Frasier_S11E02_00017376.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <!-- <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Overview Video
+                </h3>
+                <video width="100%" autoplay loop muted controls>
+                  <source src="" type="video/mp4" />
+                </video>
+            </div> -->
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Recovering humans with calibrated cameras
+                </h3>
+                <img style="width: 100%" src="media/human_results@4x.png">
+                <p class="text-justify">
+                    <b>Using calibrated cameras to solve for scale and identity association.</b> Given calibrated cameras, we use frames at shot changes to solve for the actor's pose, location, relative scale, and association. The four overlapping regions
+                    (left) indicate possible locations triangulated by the cameras. Circles indicate correct matches after Hungarian matching. Reconstructed humans are visualized in a NeRF (right).
+                </p>
+                <div class="text-center">
+                    <video width="100%" autoplay loop muted controls>
+                        <source src="media/trimmed_from_supplementary/calibrated_multi_shot_method.mp4" type="video/mp4" />
+                      </video>
+                </div>
+                <p class="text-justify">
+                    <b>Our "calibrated multi-shot" method.</b> Here is a depiction of our method in action. Notice the two shot changes that are used.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    TV shows depict a wide variety of human behaviors and have been studied extensively for their potential to be a rich source of data for many applications. However, the majority of the existing work focuses on 2D recognition tasks. In this paper, we make
+                    the observation that there is a certain persistence in the data, i.e., repetition of the environments and the humans, which makes possible the 3D reconstruction of this content. Building on this insight, we propose an automatic approach
+                    that operates on an entire season of a TV show and aggregates information in 3D; we build a 3D model of the environment, compute camera information, static 3D scene structure and body scale information. Then, we demonstrate how this
+                    information acts as rich 3D context that can guide and improve the recovery of 3D human pose and position in these environments. Moreover, we show that reasoning about humans and their environment in 3D enables a broad range of downstream
+                    applications: re-identification, gaze estimation, cinematography and image editing. We apply our approach on environments from seven iconic TV shows and perform an extensive evaluation of the proposed system.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    7 sitcom environments
+                </h3>
+                <p class="text-justify">
+                    We consider seven rooms from seven sitcoms.
+                </p>
+                <img style="width: 100%" src="media/nerf_rooms@4x.png">
+                <p class="text-justify">
+                    <b>Panoramic NeRF views of the reconstructed TV environments.</b> The sitcoms are as follows: 1. "The Big Bang Theory", 2. "Frasier", 3. "Everybody Loves Raymond", 4. "Friends", 5. "Two and a Half Men", 6. "Seinfeld", 7. "How I Met
+                    Your Mother".
+                </p>
+                <div class="text-center">
+                    <video width="100%" autoplay loop muted controls>
+                        <source src="media/trimmed_from_supplementary/rooms.mp4" type="video/mp4" />
+                      </video>
+                </div>
+                <p class="text-justify">
+                    <b>NeRF renderings of the rooms.</b> The NeRF renderings with camera movement in the rooms.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <hr>
+                <h3>
+                    Results
+                </h3>
+                <p class="text-justify">
+                    Below we show more results from our method.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Recovered cameras and sparse structure
+                </h3>
+                <p class="text-justify">
+                    These cameras, images, and the point cloud are from the living room of "The Big Bang Theory".
+                </p>
+                <div class="text-center">
+                    <video width="100%" autoplay loop muted controls>
+                        <source src="media/trimmed_from_supplementary/cameras_and_structure.mp4" type="video/mp4" />
+                      </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Temporal reconstruction
+                </h3>
+                <p class="text-justify">
+                    We can reconstruct video sequences from TV shows where we replace the background with the NeRF rendering and the people with SMPL meshes. We leverage our recovered 3D context (body pose, shape, location, and identity) and <a href="https://geometry.stanford.edu/projects/humor/">HuMoR</a> for this result.
+                </p>
+                <div class="text-center">
+                    <video width="100%" autoplay loop muted controls>
+                        <source src="media/trimmed_from_supplementary/temporal_reconstruction.mp4" type="video/mp4" />
+                      </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Temporal reconstruction with novel views!
+                </h3>
+                <p class="text-justify">
+                    We can move the camera around the room to replay a video sequence from a new viewpoint. This could enable a new form of post-production video editing.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <video width="100%" autoplay loop muted controls>
+                  <source src="media/trimmed_from_supplementary/humor/humor0.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <video width="100%" autoplay loop muted controls>
+                  <source src="media/trimmed_from_supplementary/humor/humor1.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <video width="100%" autoplay loop muted controls>
+                  <source src="media/trimmed_from_supplementary/humor/humor2.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <video width="100%" autoplay loop muted controls>
+                  <source src="media/trimmed_from_supplementary/humor/humor3.mp4" type="video/mp4" />
+                </video>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    BibTeX
+                </h3>
+                <textarea id="bibtex" class="form-control" rows="6" cols="50" readonly="">
+@inproceedings{pavlakos2022sitcoms3D,
+        title = {The One Where They Reconstructed 3D Humans and Environments in TV Shows},
+        author = {Georgios Pavlakos* and Ethan Weber* and and Matthew Tancik and Angjoo Kanazawa},
+        booktitle={ECCV},
+        year = {2022}
+}
+</textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <br> The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
