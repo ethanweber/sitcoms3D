@@ -1,0 +1,17 @@
+# misc
+__pycache__/
+*.obj
+old/
+
+# data
+data_internal/
+data_internal/zip_data.sh
+data/human_data*
+data/human_pairs*
+data/sparse_reconstruction_and_nerf_data*
+data/smpl_models*
+
+# internal
+process_data.ipynb
+external/3D-reconstructing-TV-shows
+external/public
