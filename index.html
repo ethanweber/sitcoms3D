@@ -77,7 +77,7 @@
             <div class="col-md-8 col-md-offset-2 text-center">
                 <ul class="nav nav-pills nav-justified">
                     <li class="nav-item text-center">
-                        <a href="https://arxiv.org/abs/2207.14279" class="nav-link" title="Temp link">
+                        <a href="" class="nav-link" title="Temp link">
                             <svg style="width:48px;height:48px" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z" />
                             </svg><br> Paper
@@ -139,27 +139,6 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Recovering humans with calibrated cameras
-                </h3>
-                <img style="width: 100%" src="media/human_results@4x.png">
-                <p class="text-justify">
-                    <b>Using calibrated cameras to solve for scale and identity association.</b> Given calibrated cameras, we use frames at shot changes to solve for the actor's pose, location, relative scale, and association. The four overlapping regions
-                    (left) indicate possible locations triangulated by the cameras. Circles indicate correct matches after Hungarian matching. Reconstructed humans are visualized in a NeRF (right).
-                </p>
-                <div class="text-center">
-                    <video width="100%" autoplay loop muted controls>
-                        <source src="media/trimmed_from_supplementary/calibrated_multi_shot_method.mp4" type="video/mp4" />
-                      </video>
-                </div>
-                <p class="text-justify">
-                    <b>Our "calibrated multi-shot" method.</b> Here is a depiction of our method in action. Notice the two shot changes that are used.
-                </p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
                     Abstract
                 </h3>
                 <p class="text-justify">
@@ -171,11 +150,27 @@
                 </p>
             </div>
         </div>
-
+        
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    7 sitcom environments
+                    Recovered cameras and sparse structure
+                </h3>
+                <p class="text-justify">
+                    These cameras, images, and the point cloud are from the living room of "The Big Bang Theory".
+                </p>
+                <div class="text-center">
+                    <video width="100%" autoplay loop muted controls>
+                        <source src="media/trimmed_from_supplementary/sfm_and_nerf.mp4" type="video/mp4" />
+                      </video>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Rooms from seven iconic sitcoms!
                 </h3>
                 <p class="text-justify">
                     We consider seven rooms from seven sitcoms.
@@ -195,32 +190,25 @@
                 </p>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <hr>
-                <h3>
-                    Results
-                </h3>
-                <p class="text-justify">
-                    Below we show more results from our method.
-                </p>
-            </div>
-        </div>
-
+        
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Recovered cameras and sparse structure
+                    Recovering humans with calibrated cameras
                 </h3>
+                <img style="width: 100%" src="media/human_results@4x.png">
                 <p class="text-justify">
-                    These cameras, images, and the point cloud are from the living room of "The Big Bang Theory".
+                    <b>Using calibrated cameras to solve for scale and identity association.</b> Given calibrated cameras, we use frames at shot changes to solve for the actor's pose, location, relative scale, and association. The four overlapping regions
+                    (left) indicate possible locations triangulated by the cameras. Circles indicate correct matches after Hungarian matching. Reconstructed humans are visualized in a NeRF (right).
                 </p>
                 <div class="text-center">
                     <video width="100%" autoplay loop muted controls>
-                        <source src="media/trimmed_from_supplementary/sfm_and_nerf.mp4" type="video/mp4" />
+                        <source src="media/trimmed_from_supplementary/calibrated_multi_shot_method.mp4" type="video/mp4" />
                       </video>
                 </div>
+                <p class="text-justify">
+                    <b>Our "calibrated multi-shot" method.</b> Here is a depiction of our method in action. Notice the two shot changes that are used.
+                </p>
             </div>
         </div>
 
