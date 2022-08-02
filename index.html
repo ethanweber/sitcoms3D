@@ -10,25 +10,25 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
     <link rel="icon" type="image/png" href="favicon.png">
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -96,7 +96,7 @@
             <div class="col-md-8 col-md-offset-2 text-center">
                 <ul class="nav nav-pills nav-justified">
                     <li class="nav-item text-center">
-                        <a href="" class="nav-link" title="Temp link">
+                        <a href="https://arxiv.org/abs/2207.14279" class="nav-link" title="arxiv link">
                             <svg style="width:48px;height:48px" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z" />
                             </svg><br> Paper
@@ -161,11 +161,7 @@
                     Abstract
                 </h3>
                 <p class="text-justify">
-                    TV shows depict a wide variety of human behaviors and have been studied extensively for their potential to be a rich source of data for many applications. However, the majority of the existing work focuses on 2D recognition tasks. In this paper, we make
-                    the observation that there is a certain persistence in the data, i.e., repetition of the environments and the humans, which makes possible the 3D reconstruction of this content. Building on this insight, we propose an automatic approach
-                    that operates on an entire season of a TV show and aggregates information in 3D; we build a 3D model of the environment, compute camera information, static 3D scene structure and body scale information. Then, we demonstrate how this
-                    information acts as rich 3D context that can guide and improve the recovery of 3D human pose and position in these environments. Moreover, we show that reasoning about humans and their environment in 3D enables a broad range of downstream
-                    applications: re-identification, gaze estimation, cinematography and image editing. We apply our approach on environments from seven iconic TV shows and perform an extensive evaluation of the proposed system.
+                    TV shows depict a wide variety of human behaviors and have been studied extensively for their potential to be a rich source of data for many applications. However, the majority of the existing work focuses on 2D recognition tasks. In this paper, we make the observation that there is a certain persistence in the data, i.e., repetition of the environments and the humans, which makes possible the 3D reconstruction of this content. Building on this insight, we propose an automatic approach that operates on an entire season of a TV show and aggregates information in 3D; we build a 3D model of the environment, compute camera information, static 3D scene structure and body scale information. Then, we demonstrate how this information acts as rich 3D context that can guide and improve the recovery of 3D human pose and position in these environments. Moreover, we show that reasoning about humans and their environment in 3D enables a broad range of downstream applications: re-identification, gaze estimation, cinematography and image editing. We apply our approach on environments from seven iconic TV shows and perform an extensive evaluation of the proposed system.
                 </p>
             </div>
         </div>
@@ -176,7 +172,7 @@
                     Recovered cameras and sparse structure
                 </h3>
                 <p class="text-justify">
-                    These cameras, images, and the point cloud are from the living room of "The Big Bang Theory".
+                    We recover the geometry of TV show locations by using images across a whole season. Below, we show the cameras, images, and the point cloud from the living room of "The Big Bang Theory".
                 </p>
                 <div class="text-center">
                     <video width="100%" autoplay loop muted controls>
@@ -196,8 +192,9 @@
                 </p>
                 <img style="width: 100%" src="media/nerf_rooms@4x.png">
                 <p class="text-justify">
-                    <b>Panoramic NeRF views of the reconstructed TV environments.</b> The sitcoms are as follows: 1. "The Big Bang Theory", 2. "Frasier", 3. "Everybody Loves Raymond", 4. "Friends", 5. "Two and a Half Men", 6. "Seinfeld", 7. "How I Met
-                    Your Mother".
+                    <b>Panoramic NeRF views of the reconstructed TV environments.</b> Can you guess the TV show for each room?
+                    <br>
+                    <font size="1">Spoiler: 1. "The Big Bang Theory", 2. "Frasier", 3. "Everybody Loves Raymond", 4. "Friends", 5. "Two and a Half Men", 6. "Seinfeld", 7. "How I Met Your Mother".</font>
                 </p>
                 <div class="text-center">
                     <video width="100%" autoplay loop muted controls>
@@ -217,8 +214,7 @@
                 </h3>
                 <img style="width: 100%" src="media/human_results@4x.png">
                 <p class="text-justify">
-                    <b>Using calibrated cameras to solve for scale and identity association.</b> Given calibrated cameras, we use frames at shot changes to solve for the actor's pose, location, relative scale, and association. The four overlapping regions
-                    (left) indicate possible locations triangulated by the cameras. Circles indicate correct matches after Hungarian matching. Reconstructed humans are visualized in a NeRF (right).
+                    <b>Using calibrated cameras to solve for scale and identity association.</b> Given calibrated cameras, we use frames at shot changes to solve for the actor's pose, location, relative scale, and association. The four overlapping regions (left) indicate possible locations triangulated by the cameras. Circles indicate correct matches after Hungarian matching. Reconstructed humans are visualized in a NeRF (right).
                 </p>
 
                 <div class="text-center">
@@ -227,7 +223,7 @@
                       </video>
                 </div>
                 <p class="text-justify">
-                    <b>Our "calibrated multi-shot" method.</b> Here is a depiction of our method in action. Notice the two shot changes that are used.
+                    <b>Our calibrated multi-shot method.</b> Here is a depiction of our method in action. Notice the two frames on the shot boundary that are used as input. More results follow below:
                 </p>
             </div>
         </div>
@@ -277,12 +273,12 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <h3>
-                    Monocular recovery with context
+                    Monocular human reconstruction with context
                 </h3>
                 <img style="width: 100%" src="media/contextual_results@4x.png">
                 <p class="text-justify">
-                    <b>Using calibrated cameras to solve for scale and identity association.</b> Given calibrated cameras, we use frames at shot changes to solve for the actor's pose, location, relative scale, and association. The four overlapping regions
-                    (left) indicate possible locations triangulated by the cameras. Circles indicate correct matches after Hungarian matching. Reconstructed humans are visualized in a NeRF (right).
+                    <b>Using 3D context for monocular human reconstruction.</b>
+                    For frames that are not on shot boundaries, we only have access to monocular observations. In this case, we can leverage (a) the body shape (scale) of the person from a neighboring shot change, (b) the camera registration, and (c) the static structure of the environment. This enables monocular reconstruction of the person in context with their environment.
                 </p>
 
                 <div class="text-center">
@@ -291,7 +287,7 @@
                       </video>
                 </div>
                 <p class="text-justify">
-                    <b>Our "calibrated multi-shot" method.</b> Here is a depiction of our method in action. Notice the two shot changes that are used.
+                    <b>Our contextual monocular method</b> is applicable even for monocular input, by relying on the 3D context we aggregate across a whole season. You can see more results below:
                 </p>
             </div>
         </div>
@@ -343,7 +339,7 @@
             </div>
             <div class="item item-chair-tp">
               <video poster="" id="chair-tp" autoplay playsinline controls muted loop width="100%">
-                <source src="media/monocular/ELR-apartment_ELR_S09E01_00016188-ELR_S09E01_000161899.mp4"
+                <source src="media/monocular/ELR-apartment_ELR_S09E01_00016188-ELR_S09E01_00016189.mp4"
                         type="video/mp4">
               </video>
             </div>
@@ -356,7 +352,7 @@
                     Temporal reconstruction
                 </h3>
                 <p class="text-justify">
-                    We can reconstruct video sequences from TV shows where we replace the background with the NeRF rendering and the people with SMPL meshes. We leverage our recovered 3D context (body pose, shape, location, and identity) and <a href="https://geometry.stanford.edu/projects/humor/">HuMoR</a> for this result.
+                    We can reconstruct video sequences from TV shows where we replace the background with the NeRF rendering and the people with SMPL meshes. Here we demonstrate results using <a href="https://geometry.stanford.edu/projects/humor/">HuMoR</a> informed by our context.
                 </p>
                 <div class="text-center">
                     <video width="100%" autoplay loop muted controls>
@@ -417,7 +413,7 @@
                 <h3>
                     Acknowledgements
                 </h3>
-                <br> The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>.
+                <br> The website template was borrowed from <a href="http://mgharbi.com/">Michaël Gharbi</a>, with elements from <a href="https://github.com/3d-moments/3d-moments.github.io">3D Moments</a>.
                 </p>
             </div>
         </div>
