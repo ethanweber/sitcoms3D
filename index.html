@@ -13,6 +13,24 @@
 
     <link rel="icon" type="image/png" href="favicon.png">
 
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
@@ -21,6 +39,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
 </head>
 
 <body>
@@ -201,6 +220,7 @@
                     <b>Using calibrated cameras to solve for scale and identity association.</b> Given calibrated cameras, we use frames at shot changes to solve for the actor's pose, location, relative scale, and association. The four overlapping regions
                     (left) indicate possible locations triangulated by the cameras. Circles indicate correct matches after Hungarian matching. Reconstructed humans are visualized in a NeRF (right).
                 </p>
+
                 <div class="text-center">
                     <video width="100%" autoplay loop muted controls>
                         <source src="media/trimmed_from_supplementary/calibrated_multi_shot_method.mp4" type="video/mp4" />
@@ -210,6 +230,124 @@
                     <b>Our "calibrated multi-shot" method.</b> Here is a depiction of our method in action. Notice the two shot changes that are used.
                 </p>
             </div>
+        </div>
+
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-fullbody">
+              <video poster="" id="fullbody" autoplay playsinline controls muted loop height="100%">
+                <source src="media/twitter/Friends-monica_apartment_Friends_S08E02_00029019-Friends_S08E02_00029020.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+
+            <div class="item item-shiba">
+              <video poster="" id="shiba" autoplay playsinline controls muted loop height="100%">
+                <source src="media/twitter/TBBT-big_living_room_TBBT_S12E03_00005347-TBBT_S12E03_00005348.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-toby">
+              <video poster="" id="toby" autoplay playsinline controls muted loop height="100%">
+                <source src="media/twitter/Friends-monica_apartment_Friends_S08E08_00014402-Friends_S08E08_00014403.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-chair-tp">
+              <video poster="" id="chair-tp" autoplay playsinline controls muted loop width="100%">
+                <source src="media/twitter/HIMYM-red_apartment_HIMYM_S06E22_00027990-HIMYM_S06E22_00027991.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-chair-tp">
+              <video poster="" id="chair-tp" autoplay playsinline controls muted loop width="100%">
+                <source src="media/twitter/ELR-apartment_ELR_S09E04_00010495-ELR_S09E04_00010496.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-chair-tp">
+              <video poster="" id="chair-tp" autoplay playsinline controls muted loop width="100%">
+                <source src="media/twitter/TAAHM-kitchen_TAAHM_S10E14_00003094-TAAHM_S10E14_00003095.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Monocular recovery with context
+                </h3>
+                <img style="width: 100%" src="media/contextual_results@4x.png">
+                <p class="text-justify">
+                    <b>Using calibrated cameras to solve for scale and identity association.</b> Given calibrated cameras, we use frames at shot changes to solve for the actor's pose, location, relative scale, and association. The four overlapping regions
+                    (left) indicate possible locations triangulated by the cameras. Circles indicate correct matches after Hungarian matching. Reconstructed humans are visualized in a NeRF (right).
+                </p>
+
+                <div class="text-center">
+                    <video width="100%" autoplay loop muted controls>
+                        <source src="media/trimmed_from_supplementary/contextual_monocular_method.mp4" type="video/mp4" />
+                      </video>
+                </div>
+                <p class="text-justify">
+                    <b>Our "calibrated multi-shot" method.</b> Here is a depiction of our method in action. Notice the two shot changes that are used.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-fullbody">
+              <video poster="" id="fullbody" autoplay playsinline controls muted loop height="100%">
+                <source src="media/monocular/TBBT-big_living_room_TBBT_S12E16_00008790-TBBT_S12E16_00008789.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+
+            <div class="item item-shiba">
+              <video poster="" id="shiba" autoplay playsinline controls muted loop height="100%">
+                <source src="media/monocular/TAAHM-kitchen_TAAHM_S10E21_00011499-TAAHM_S10E21_00011500.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-toby">
+              <video poster="" id="toby" autoplay playsinline controls muted loop height="100%">
+                <source src="media/monocular/HIMYM-red_apartment_HIMYM_S06E12_00007844-HIMYM_S06E12_00007845.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-chair-tp">
+              <video poster="" id="chair-tp" autoplay playsinline controls muted loop width="100%">
+                <source src="media/monocular/ELR-apartment_ELR_S09E07_00033124-ELR_S09E07_00033125.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-chair-tp">
+              <video poster="" id="chair-tp" autoplay playsinline controls muted loop width="100%">
+                <source src="media/monocular/TBBT-big_living_room_TBBT_S12E05_00007364-TBBT_S12E05_00007365.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-chair-tp">
+              <video poster="" id="chair-tp" autoplay playsinline controls muted loop width="100%">
+                <source src="media/monocular/TAAHM-kitchen_TAAHM_S10E05_00018713-TAAHM_S10E05_00018712.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-chair-tp">
+              <video poster="" id="chair-tp" autoplay playsinline controls muted loop width="100%">
+                <source src="media/monocular/HIMYM-red_apartment_HIMYM_S06E03_00025536-HIMYM_S06E03_00025537.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-chair-tp">
+              <video poster="" id="chair-tp" autoplay playsinline controls muted loop width="100%">
+                <source src="media/monocular/ELR-apartment_ELR_S09E01_00016188-ELR_S09E01_000161899.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
         </div>
 
         <div class="row">
