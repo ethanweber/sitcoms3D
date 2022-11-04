@@ -12,7 +12,8 @@ import gdown
 data_filename_to_file_id = [
     ("./data/human_data.zip", "1zk12qxnZbReKqdvy-JYp1jQn2QA3oJzz"),
     ("./data/human_pairs.zip", "1927rnmJ3mWcjsj0afqawSto2IK2lLwmA"),
-    ("./data/sparse_reconstruction_and_nerf_data.zip", "1RmwDUAp1T4RkwZg1S_7L9JAViWtBZfAG")
+    ("./data/sparse_reconstruction_and_nerf_data.zip", "1RmwDUAp1T4RkwZg1S_7L9JAViWtBZfAG"),
+    ("./data/nerf_checkpoints.zip", "1hlLwDwa-4SjN1HNgvweS9jY_Pi_s805g")
 ]
 
 disk_data_filename_to_file_id = [

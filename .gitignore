@@ -2,14 +2,17 @@
 __pycache__/
 *.obj
 old/
+*.egg-info/
+.ipynb_checkpoints/
 
 # data
 data_internal/
 data_internal/zip_data.sh
 data/human_data*
 data/human_pairs*
-data/sparse_reconstruction_and_nerf_data*
+data/nerf_checkpoints*
 data/smpl_models*
+data/sparse_reconstruction_and_nerf_data*
 
 # internal
 process_data.ipynb

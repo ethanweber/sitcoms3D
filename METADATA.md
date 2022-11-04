@@ -3,8 +3,13 @@
 To download the relevant files you can run the following script (enabled by the [gdown pip package](https://github.com/wkentaro/gdown)). All unzipped folders should live in the [data/](data/) folder after running the script.
 
 ```bash
-pip install gdown
 python download_data.py
+```
+
+Next, cache the NeRF data. You can run this with different downscales.
+
+```bash
+python sitcoms3D/nerf/run_cache_dataset.py --img_downscale 1
 ```
 
 Our data uses a convention of `<sitcom>-<location>` for seven sitcoms, which can be seen in the NeRF-W panoramic images below:

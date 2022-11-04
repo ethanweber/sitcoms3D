@@ -6,7 +6,25 @@ import numpy as np
 import os
 os.environ['PYOPENGL_PLATFORM'] = 'egl'
 import pyrender
-import trimesh
+
+import torch
+from torch import nn
+import cv2
+from sitcoms3D.utils.io import get_absolute_path
+import numpy as np
+
+# nerf
+from sitcoms3D.nerf.src.opt import get_opts_from_args_str
+from sitcoms3D.nerf.run_train import NeRFSystem
+
+def image_depth_from_results(results):
+    img = results["rgb_fine_static"]
+    # img = results["rgb_fine"]
+    img_w, img_h = results["img_wh"]
+    image = img.view(img_h, img_w, 3).cpu().numpy()
+    image = (image * 255.0).astype(np.uint8)
+    depth = results['depth_fine_static_med'].view(img_h, img_w).cpu().numpy()
+    return image, depth
 
 
 def Z_to_raydepth(depth, intrinsics):
@@ -98,3 +116,32 @@ def render_human(obj_mesh_data, pose_in, K, alphaMode="OPAQUE", baseColorFactors
 
     r.delete()
     return image, depth, alpha
+
+class NeRFWrapper(nn.Module):
+
+    def __init__(self, environment_dir, ckpt_path, use_cache=True):
+        super().__init__()
+        config = get_absolute_path("sitcoms3D/nerf/configs/default.txt")
+        self.args = get_opts_from_args_str(f"-c {config} --environment_dir {environment_dir} --use_cache {use_cache} --chunk 50000")
+        system = NeRFSystem(self.args, eval_only=True)
+        system.load_from_ckpt_path(ckpt_path)
+        system.cuda()
+        system.eval()
+        self.system = system
+
+    def forward(self, pose, Kin, height=None, id_=None, near_min=0.1):
+        c2w = torch.from_numpy(pose[:3]).float().to(self.system.device)
+        K = torch.from_numpy(Kin).float().to(self.system.device)
+
+        H, W = round(K[1, 2].item() * 2.0), round(K[0, 2].item() * 2.0)
+
+        if height is not None:
+            scalar = (height / K[0, 2]) / 2
+            K[:2] *= scalar
+
+        # resize after the downscaling
+        results = self.system.forward_pose_K_a_t(c2w, K, id_=id_, near_min=near_min)
+        image, depth = image_depth_from_results(results)
+        image = cv2.resize(image, (W, H))
+        depth = cv2.resize(depth, (W, H), interpolation=cv2.INTER_LINEAR)
+        return image, depth
