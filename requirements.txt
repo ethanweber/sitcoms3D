@@ -25,7 +25,7 @@ pytorch-lightning==1.1.5
 smplx
 test-tube==0.7.5
 torch_optimizer
-torch==1.7.1
+torch==1.13.1
 torchvision==0.8.2
 trimesh
 trimesh==3.9.1
