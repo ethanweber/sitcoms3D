@@ -21,7 +21,7 @@ pycollada==0.7.1
 pyglet==1.5.10
 PyMCubes==0.1.2
 pyrender
-pytorch-lightning==1.1.5
+pytorch-lightning==1.6.0
 smplx
 test-tube==0.7.5
 torch_optimizer
