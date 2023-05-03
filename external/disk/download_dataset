@@ -14,7 +14,7 @@ fi
 
 # create a crude progress counter
 ITER=1;
-TOTAL=138;
+googleffcbb022234d3383;
 # unzip test scenes
 cd imw2020-val/scenes;
 for SCENE_TAR in *.tar.gz; do
