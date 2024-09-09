@@ -34,7 +34,7 @@ This section concerns the data of the COLMAP sparse reconstructions and images u
 
 - `threejs.json` is a file that can be visualized with this online three.js editor [https://threejs.org/editor/](https://threejs.org/editor/). This file will show the COLMAP sparse point cloud and the bounding box used to define regions where the NeRF-W field is valid. `point_cloud_transform` was created in this interface, where we rotated and translated the point cloud in the three.js editor to obtain an axis-aligned bounding box (AABB). This allowed for efficient ray near/far bounds sampling when using with NeRF.
 
-If you are interested in all the images, and you have access to the videos for the episodes, you can also take a look at the `process_videos.py` script.
+If you are interested in the images used to run the COLMAP sparse reconstruction, you can find them [here](https://drive.google.com/file/d/1B3FkRy-BlMBrsoYSkIgOdWRzpnccMQoX/view?usp=drive_link). If you are interested in all the images, and you have access to the videos for the episodes, you can also take a look at the `process_videos.py` script.
 
 <hr>
 
